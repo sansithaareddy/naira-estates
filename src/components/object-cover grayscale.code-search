@@ -1,0 +1,19 @@
+# Query: object-cover grayscale
+# ContextLines: 1
+
+3 results - 3 files
+
+src/components/FeaturedProjects.jsx:
+  24          alt={project.name}
+  25:         className="absolute inset-0 w-full h-[124%] object-cover"
+  26        />
+
+src/components/Legacy.jsx:
+  67                alt="Naira Estates landmark"
+  68:               className="w-full h-full object-cover"
+  69              />
+
+src/pages/Projects.jsx:
+  24          alt={project.name}
+  25:         className="absolute inset-0 w-full h-[124%] object-cover"
+  26        />

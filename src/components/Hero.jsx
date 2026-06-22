@@ -1,88 +1,46 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Hero() {
   return (
-    <section className="relative h-screen w-full flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80"
-          alt="Luxury residential tower"
-          className="w-full h-full object-cover"
-        />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-navy/30"></div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="max-w-2xl">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gold text-sm tracking-[0.3em] uppercase mb-6"
-          >
-            Naira Estates
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-white text-5xl md:text-7xl font-bold leading-tight mb-6"
-          >
-            Building Tomorrow's Landmarks
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-gray-200 text-lg md:text-xl mb-10 leading-relaxed"
-          >
-            Crafting premium residences that redefine urban living across
-            India's most vibrant cities.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <Link
-              to="/projects"
-              className="bg-gold text-navy px-8 py-4 text-sm font-semibold tracking-wide text-center hover:bg-white transition-all duration-300"
-            >
-              Explore Projects
-            </Link>
-            <Link
-              to="/contact"
-              className="border border-white text-white px-8 py-4 text-sm font-semibold tracking-wide text-center hover:bg-white hover:text-navy transition-all duration-300"
-            >
-              Schedule Consultation
-            </Link>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+    <section className="relative min-h-screen bg-mist overflow-hidden flex items-center justify-center">
+      {/* giant outlined word */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-sans font-medium leading-none text-[30vw] lg:text-[22vw]"
+        style={{ WebkitTextStroke: "1.5px #FFFFFF", color: "transparent" }}
       >
-        <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center pt-2">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1 h-2 bg-white rounded-full"
-          ></motion.div>
-        </div>
+        HOME
+      </span>
+
+      {/* tagline */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 text-center px-6"
+      >
+        <p className="text-lg md:text-3xl tracking-[0.3em] uppercase text-ink leading-[1.9]">
+          We build homes
+        </p>
+        <p className="text-lg md:text-3xl tracking-[0.3em] uppercase text-ink leading-[1.9]">
+          that feel like <span className="font-bold">home</span>
+        </p>
       </motion.div>
+
+      {/* meta */}
+      <div className="absolute bottom-10 left-6 md:left-10 text-[11px] tracking-[0.3em] uppercase text-muted">
+        Est. 2010 — Hyderabad
+      </div>
+
+      {/* enquire tab */}
+      <Link
+        to="/contact"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-ink text-white text-[11px] tracking-[0.25em] uppercase px-3 py-7"
+        style={{ writingMode: "vertical-rl" }}
+      >
+        Enquire
+      </Link>
     </section>
   );
 }
